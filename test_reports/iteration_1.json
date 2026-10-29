@@ -1,0 +1,74 @@
+{
+  "iteration": 1,
+  "summary": "All 9 acceptance criteria exercised: 9 backend pytest cases (all passed) + 4 browser checks (all passed, one re-verified through the public preview URL). No bugs found.",
+  "passed": 13,
+  "failed": 0,
+  "bugs": [],
+  "action_items": [],
+  "retest_needed": false,
+  "checks": [
+    {
+      "criterion": "Test 1 — admin creates property with photos, publishes, shows on public site",
+      "name": "admin-property-lifecycle-create-edit-unpublish",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Created tscheck property via /admin/imoveis/novo (title, kind=venda, city, price, image URL, status=Publicado); POST /api/admin/properties returned 201 with slug; card visible on /comprar via catalog-desktop-filter-q search; clicking it navigated to /imoveis/{slug} showing property-price."
+    },
+    {
+      "criterion": "Test 5 — admin edits reflect publicly",
+      "name": "admin-property-lifecycle-create-edit-unpublish",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "PATCH /api/admin/properties/{id} changing price to 777000 and commercial_status to Reservado; reloaded public detail page shows property-price containing '777'. Then toggled status to rascunho via admin-property-publish menu item; /comprar search for the title returned 0 matches (property removed from public catalog)."
+    },
+    {
+      "criterion": "Test 2+3 — lead capture gates content, server-side too (UI portion)",
+      "name": "lead-unlock-reveals-contact-and-whatsapp",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Fresh visitor on /imoveis/apartamento-sorocaba-v-2d6700 sees property-locked-panel with whatsapp/details cards absent; property-unlock-button opens lead-capture-modal; filled name/whatsapp/email/intent + privacy checkbox, POST /api/leads returned 201, modal closed, property-whatsapp-card and property-details-card appeared. Visiting a second property (apartamento-votorantim-l-b7fc7c) in the same session showed no locked panel and the whatsapp card directly (session persists). Re-ran successfully against the public preview URL too."
+    },
+    {
+      "criterion": "Test 2+3 — server-side lock without cookie",
+      "name": "test_property_detail_locked_without_cookie / test_property_detail_404_for_unknown_slug",
+      "lane": "backend",
+      "status": "passed",
+      "evidence": "GET /api/properties/apartamento-sorocaba-v-2d6700 without cookie -> 200, unlocked=false, description=null, pdf_url=null, teaser fields (title/price) present. GET of unknown slug -> 404."
+    },
+    {
+      "criterion": "Test 4 — WhatsApp link",
+      "name": "lead-unlock-reveals-contact-and-whatsapp",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "property-whatsapp-interesse and property-whatsapp-visita hrefs both start with https://wa.me/5515997378634?text=; decoded text of the interesse link contains the visitor name, property code V-2D6700, and neighborhood 'campolim'."
+    },
+    {
+      "criterion": "Test 6 — security (admin endpoints reject unauthenticated requests; setup single-use)",
+      "name": "test_tscheck_security_admin_endpoints.py (6 tests)",
+      "lane": "backend",
+      "status": "passed",
+      "evidence": "GET /api/admin/leads -> 401; GET /api/admin/leads/export -> 401; GET /api/admin/dashboard -> 401; PATCH /api/admin/properties/{id} -> 401; DELETE /api/admin/properties/{id} -> 401; POST /api/auth/setup with a valid new-admin payload -> 409 'O acesso administrativo já foi criado.'"
+    },
+    {
+      "criterion": "Test 7+9 — CRM dedupe: same person across two properties yields one lead with 2 interests",
+      "name": "test_tscheck_crm_lead_dedupe.py",
+      "lane": "backend",
+      "status": "passed",
+      "evidence": "POST /api/leads twice with the same whatsapp/email but different property_id returned the same lead id both times (201/201); logging in as admin and GET /api/admin/leads shows that lead with interests array of length 2."
+    },
+    {
+      "criterion": "Test 8 — mobile 390px usability (hero search, mobile menu, catalog filter sheet, lead form, whatsapp)",
+      "name": "mobile-viewport-390-usability",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "At 390x844: home hero-search-form visible with 0px horizontal overflow; header-mobile-menu-button opens the mobile nav (mobile-nav-favorites visible) and Escape closes it; /comprar shows catalog-filters-button with 0px overflow, opening catalog-mobile-filters-panel; property detail page's property-unlock-button opens lead-capture-modal with lead-capture-name visible, 0px overflow throughout."
+    },
+    {
+      "criterion": "Visit request + dashboard — unlocked visitor requests a visit, CRM shows pendente, admin confirms to confirmada; dashboard loads real KPIs",
+      "name": "visit-request-and-crm-confirm-dashboard",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Visitor unlocked a property, filled visit-request-date and clicked visit-request-submit -> POST /api/visits 2xx. Admin logged in, switched admin-leads-view-list, searched by whatsapp, opened admin-lead-dialog: admin-lead-detail-visits showed 'pendente'; clicking admin-lead-visit-confirm-{id} updated it to 'confirmada'. /admin dashboard loaded with dashboard-chart-series visible (real KPI data)."
+    }
+  ]
+}

@@ -1,0 +1,220 @@
+{
+  "theme": {
+    "mode": "light_with_dark_accents",
+    "notes": "Predominant theme: Warm Luxury Light (Bege claro #F7F4EF and Pure White #FFFFFF surfaces) paired with Obsidian Black #101014 headers/footers/accents and Warm Gold #C9A46A as the signature kinetic highlight. Conveys Brazilian high-end real estate exclusivity, trustworthiness, and sophisticated architectural warmth."
+  },
+  "colors": {
+    "surfaces": [
+      {
+        "name": "page",
+        "kind": "solid",
+        "bg": "#F7F4EF",
+        "on_bg": "#101014",
+        "on_bg_muted": "#57534E",
+        "roles": {
+          "link": "#9A6B22",
+          "link_hover": "#784F12",
+          "error": "#B91C1C",
+          "success": "#15803D"
+        }
+      },
+      {
+        "name": "panel",
+        "kind": "solid",
+        "bg": "#FFFFFF",
+        "on_bg": "#101014",
+        "on_bg_muted": "#57534E",
+        "roles": {
+          "link": "#9A6B22",
+          "link_hover": "#784F12",
+          "error": "#B91C1C",
+          "success": "#15803D"
+        }
+      },
+      {
+        "name": "inverse",
+        "kind": "solid",
+        "bg": "#101014",
+        "on_bg": "#FFFFFF",
+        "on_bg_muted": "#D6D3D1",
+        "roles": {
+          "link": "#E2C38C",
+          "link_hover": "#F5E2BE",
+          "error": "#FCA5A5",
+          "success": "#86EFAC"
+        }
+      },
+      {
+        "name": "hero",
+        "kind": "image",
+        "contrast_against": "#08080A",
+        "guarantee": "scrim: linear-gradient(180deg, rgba(16,16,20,0.82) 0%, rgba(16,16,20,0.55) 45%, rgba(16,16,20,0.92) 100%)",
+        "on_bg": "#FFFFFF",
+        "on_bg_muted": "#E5E1D8",
+        "roles": {
+          "link": "#F3D8A2",
+          "error": "#FCA5A5",
+          "success": "#86EFAC"
+        }
+      },
+      {
+        "name": "badge_gold",
+        "kind": "solid",
+        "bg": "#F5EBD9",
+        "on_bg": "#6B4912",
+        "on_bg_muted": "#8A611B"
+      },
+      {
+        "name": "badge_dark",
+        "kind": "solid",
+        "bg": "#22222A",
+        "on_bg": "#FFFFFF",
+        "on_bg_muted": "#D6D3D1"
+      }
+    ],
+    "brand": {
+      "gold": "#C9A46A",
+      "gold_hover": "#B38C52",
+      "gold_light": "#F5EBD9",
+      "gold_dark": "#6B4912",
+      "obsidian": "#101014",
+      "obsidian_card": "#18181F",
+      "beige_bg": "#F7F4EF",
+      "stone_muted": "#57534E",
+      "whatsapp_green": "#25D366",
+      "whatsapp_dark": "#128C7E"
+    },
+    "accent": "#C9A46A",
+    "on_accent": "#101014"
+  },
+  "typography": {
+    "font_family_heading": "'Playfair Display Variable', Georgia, serif",
+    "font_family_sans": "'Plus Jakarta Sans Variable', -apple-system, BlinkMacSystemFont, sans-serif",
+    "font_family_mono": "'JetBrains Mono Variable', monospace",
+    "scale_px": {
+      "display": 56,
+      "h1": 44,
+      "h2": 32,
+      "h3": 22,
+      "body": 16,
+      "caption": 14
+    },
+    "rules": {
+      "hero_title": "text-3xl sm:text-5xl lg:text-6xl font-serif font-medium tracking-tight text-white leading-tight",
+      "section_title": "text-2xl sm:text-3xl lg:text-4xl font-serif font-semibold tracking-tight text-[#101014] leading-snug",
+      "section_subtitle": "text-sm sm:text-base text-stone-600 max-w-2xl font-sans leading-relaxed",
+      "card_title": "text-lg sm:text-xl font-serif font-semibold text-[#101014] tracking-normal line-clamp-1",
+      "badge_text": "text-xs font-sans font-semibold uppercase tracking-wider",
+      "price_highlight": "text-xl sm:text-2xl font-sans font-bold text-[#101014] tracking-tight"
+    }
+  },
+  "entry_surfaces": {
+    "/": "split immersive luxury hero with dark scrim banner on top, floating smart search card anchored, followed by curated lifestyle grid and featured property showcase",
+    "/admin/login": "branded split login — Anne Carvalho luxury positioning panel left, admin access form right with dark obsidian container",
+    "/imovel/:id": "high-impact architectural hero gallery, locked premium details teaser bar with gated lead capture modal overlay and WhatsApp instant triggers",
+    "/lancamentos": "editorial project catalog with filter bar, developer badges and construction status progress pills",
+    "/comprar": "interactive search explorer with live filter drawer, view switcher (grid/map/compare) and active count indicator",
+    "/alugar": "rental catalog with live filter drawer, monthly condo/IPTU transparent cost breakdown and direct scheduling CTA",
+    "/sobre": "editorial consultant profile with CRECI accreditation banner, Anne's biography, career milestones, and client testimonials",
+    "/contato": "split contact surface with direct WhatsApp quick-actions, interactive Sorocaba/Votorantim region map and inquiry form",
+    "/admin": "high-density CRM dashboard with 7-stage kanban lead pipeline, commercial conversion metrics, property CRUD manager and lead inbox"
+  },
+  "spacing_and_layout": {
+    "container": "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
+    "mobile_first": "Mobile viewport prioritized (sticky bottom WhatsApp bar on mobile, thumb-friendly filters drawer, touchable gallery carousels)",
+    "section_padding": "py-12 sm:py-20 lg:py-24",
+    "grid_modes": {
+      "property_cards": "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8",
+      "lifestyle_bento": "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6",
+      "crm_kanban": "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-7 gap-3 overflow-x-auto pb-4"
+    }
+  },
+  "component_structure": {
+    "header": {
+      "path": "frontend/src/components/Header.tsx",
+      "elements": "Brand mark tipográfico (Ícone casa dourada + 'Anne Carvalho' serif + 'Consultora de Imóveis' CRECI/SP), menu (Início, Lançamentos, Comprar, Alugar, Sobre, Contato), comparador pill, botão CTA 'Fale com a Anne' (WhatsApp link direto) + Admin link discreto no topo/menu"
+    },
+    "hero_search": {
+      "path": "frontend/src/components/HeroSearch.tsx",
+      "elements": "Tabs (Comprar, Alugar, Lançamentos), select Cidade/Bairro (Campolim, Alphaville, Parque Campolim, Santa Rosália, Vossoroca, etc.), Tipo de Imóvel, Faixa de Preço, botão 'Encontrar meu imóvel' dourado"
+    },
+    "property_card": {
+      "path": "frontend/src/components/PropertyCard.tsx",
+      "elements": "Foto 4:3 com badge de status (Lançamento / Venda / Locação), botão de favoritar, carousel rápido de fotos, badges de comodidades (quartos, suítes, vagas, m²), preço formatado R$ pt-BR, bairro/cidade e botão de detalhes"
+    },
+    "lead_capture_modal": {
+      "path": "frontend/src/components/LeadCaptureModal.tsx",
+      "elements": "Dialog elegante com mensagem: 'Gostou deste imóvel? Receba todos os detalhes, fotos exclusivas e planta baixa!', formulário (Nome completo, WhatsApp/Celular com máscara (15) 99999-9999, E-mail, Intenção), validação instantânea, desbloqueio de galeria completa e envio direto para o CRM"
+    },
+    "crm_funnel": {
+      "path": "frontend/src/components/crm/CrmKanban.tsx",
+      "stages": [
+        "Novo lead",
+        "Primeiro contato realizado",
+        "Em atendimento",
+        "Visita agendada",
+        "Em negociação",
+        "Venda ou locação concluída",
+        "Perdido ou sem interesse"
+      ]
+    },
+    "finance_simulator": {
+      "path": "frontend/src/components/FinanceSimulator.tsx",
+      "elements": "Calculadora ilustrativa com slider de entrada (ex: 20%), prazo (anos), taxa estimada de juros, cálculo de parcelas mensais SAC/PRICE e botão 'Simular com a Anne via WhatsApp'"
+    },
+    "comparison_drawer": {
+      "path": "frontend/src/components/ComparisonDrawer.tsx",
+      "elements": "Gaveta flutuante inferior para comparar até 3 imóveis lado a lado (Preço, m², Preço/m², Quartos, Vagas, Condomínio, Bairro, Lazer)"
+    }
+  },
+  "image_urls": [
+    {
+      "category": "hero_banner",
+      "url": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzOTB8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBtb2Rlcm4lMjBtYW5zaW9uJTIwcG9vbCUyMGFyY2hpdGVjdHVyZXxlbnwwfHx8fDE3OTMyMzY1NDd8MA&ixlib=rb-4.1.0&q=85",
+      "description": "Mansão contemporânea com piscina de borda infinita e arquitetura de alto padrão sob céu azul — perfeita para o Banner Principal da Home"
+    },
+    {
+      "category": "lifestyle_mansions",
+      "url": "https://images.unsplash.com/photo-1613490493576-7fde63acd811?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzOTB8MHwxfHNlYXJjaHwyfHxsdXh1cnklMjBtb2Rlcm4lMjBtYW5zaW9uJTIwcG9vbCUyMGFyY2hpdGVjdHVyZXxlbnwwfHx8fDE3OTMyMzY1NDd8MA&ixlib=rb-4.1.0&q=85",
+      "description": "Casa moderna em condomínio fechado com varanda gourmet e piscina"
+    },
+    {
+      "category": "lifestyle_apartments",
+      "url": "https://images.unsplash.com/photo-1670589953903-b4e2f17a70a9?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzOTB8MHwxfHNlYXJjaHw0fHxsdXh1cnklMjBtb2Rlcm4lMjBtYW5zaW9uJTIwcG9vbCUyMGFyY2hpdGVjdHVyZXxlbnwwfHx8fDE3OTMyMzY1NDd8MA&ixlib=rb-4.1.0&q=85",
+      "description": "Empreendimento com piscina ampla e fachada de vidro elegante"
+    },
+    {
+      "category": "interior_living_room",
+      "url": "https://images.unsplash.com/photo-1646987916641-1f3c8992daa2?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxOTB8MHwxfHNlYXJjaHwyfHxsdXh1cnklMjBhcGFydG1lbnQlMjBpbnRlcmlvciUyMG1vZGVybiUyMGxpdmluZyUyMHJvb218ZW58MHx8fHwxNzkzMjM2NTQ3fDA&ixlib=rb-4.1.0&q=85",
+      "description": "Living integrado de alto padrão com decoração contemporânea e iluminação refinada"
+    },
+    {
+      "category": "interior_apartment_view",
+      "url": "https://images.unsplash.com/photo-1757924461488-ef9ad0670978?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxOTB8MHwxfHNlYXJjaHwzfHxsdXh1cnklMjBhcGFydG1lbnQlMjBpbnRlcmlvciUyMG1vZGVybiUyMGxpdmluZyUyMHJvb218ZW58MHx8fHwxNzkzMjM2NTQ3fDA&ixlib=rb-4.1.0&q=85",
+      "description": "Apartamento moderno com janelas panorâmicas e pé direito alto"
+    },
+    {
+      "category": "realtor_profile_anne",
+      "url": "https://images.unsplash.com/photo-1585240975858-7264fd020798?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Njd8MHwxfHNlYXJjaHwzfHxjb25maWRlbnQlMjBmZW1hbGUlMjByZWFsJTIwZXN0YXRlJTIwYWdlbnQlMjBwb3J0cmFpdHxlbnwwfHx8fDE3OTMyMzY1NDd8MA&ixlib=rb-4.1.0&q=85",
+      "description": "Retrato profissional de Anne Carvalho — Consultora de Imóveis, transmitindo acolhimento, postura executiva e confiança"
+    }
+  ],
+  "motion": {
+    "rules": "Micro-interações suaves com framer-motion/motion. Transições de 0.25s ease-out em hover de cards (leve elevação -translate-y-1 + sombra dourada/âmbar sutil). Modais com scale/fade suaves. Carrossel de imagens fluido.",
+    "prefers_reduced_motion": "Desabilitar animações de entrada se prefers-reduced-motion for ativo."
+  },
+  "accessibility": {
+    "wcag_level": "WCAG AA",
+    "contrast_guarantee": "Todo texto sobre fundos claros (#F7F4EF e #FFFFFF) possui no mínimo 4.5:1 com textos #101014 e #57534E. No Banner escuro, scrim garante contraste > 7:1 para títulos brancos #FFFFFF. Botões dourados usam texto escuro #101014 para alto contraste legível.",
+    "data_testids": "Todos os botões, filtros, inputs de lead, cards e links de WhatsApp possuem 'data-testid' explícito (ex: 'property-card-1', 'filter-search-submit', 'lead-capture-modal-submit', 'whatsapp-direct-button', 'admin-kanban-stage-new')."
+  },
+  "instructions_to_main_agent": [
+    "1. Configurar index.css com os tokens @theme de cores (#101014 preto sofisticado, #C9A46A dourado elegante, #F7F4EF bege claro) e importar as fontes '@fontsource-variable/playfair-display' para títulos serifados e '@fontsource-variable/plus-jakarta-sans' para texto funcional.",
+    "2. Implementar fluxo completo em pt-BR (formatos de moeda R$ 1.500.000,00, telefone (15) 99999-9999, datas brasileiras DD/MM/AAAA).",
+    "3. O site é voltado para Sorocaba e Votorantim (SP), com bairros reais de alto/médio padrão: Campolim, Parque Campolim, Jardim Faculdade, Alphaville Nova Esplanada, Fazenda Imperial, Santa Rosália, Jardim Santa Rosália, Vossoroca, Altos do Campolim, etc.",
+    "4. Obrigatório implementar a funcionalidade de Bloqueio de Lead: na página do imóvel, fotos complementares, planta baixa, documentação e botões de contato avançado ficam ocultos ou com teaser com botão 'Ver todas as informações e fotos', abrindo o LeadCaptureModal. Ao preencher, os dados são salvos no CRM (novo lead) e liberam o conteúdo instantaneamente (persistido no localStorage/session).",
+    "5. Implementar Painel Administrativo (/admin) completo com: (a) Dashboard com KPIs (Total de Imóveis, Leads Ativos, Visitas Agendadas, VGV em Carteira); (b) CRM Funil Kanban com as 7 etapas especificadas; (c) Gerenciador CRUD de Imóveis com upload/link de imagens, status, tipologias e destaque; (d) Gerenciador de Empreendimentos; (e) Configurações do Site (WhatsApp da Anne, CRECI, telefones, bio).",
+    "6. Adicionar ferramentas de apoio ao cliente: Simulador de Financiamento ilustrativo, Comparador de até 3 imóveis, Botão flutuante de WhatsApp da Anne com mensagens pré-formatadas ('Olá Anne, vi o imóvel [Código/Título] e gostaria de mais informações').",
+    "7. Garantir responsividade impecável em mobile com menu lateral sheet, gaveta de filtros colapsável e cards com toque tátil agradável."
+  ]
+}
